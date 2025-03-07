@@ -2,89 +2,52 @@
 //
 //import (
 //	"fmt"
-//	"github.com/Seven11Eleven/go-pod-kapot/leetcode"
-//	"runtime"
-//	"sync"
+//	//"log"
+//	//"math"
+//	"os"
+//	"runtime/pprof"
 //)
 //
-//const goCount = 5555555
-
-//func main() {
-//	myMut := mutex_impl.NewMutexWithChan()
-//	cnt := 0
-//	wg := sync.WaitGroup{}
-//
-//	wg.Add(goCount)
-//
-//	for i := 0; i < goCount; i++ {
-//		go func() {
-//			defer wg.Done()
-//			myMut.Lock()
-//			cnt++
-//			myMut.Unlock()
-//		}()
+//func minOperations(boxes string) []int {
+//	cur := 0
+//	l := 0
+//	res := make([]int, len(boxes))
+//	for i, v := range boxes {
+//		res[i] = cur
+//		if rune(v) == '1' {
+//			l++
+//		}
+//		cur += l
 //	}
-//
-//	wg.Wait()
-//
-//	fmt.Println("Final count:", cnt)
+//	cur = 0
+//	r := 0
+//	for i := len(boxes) - 1; i >= 0; i-- {
+//		res[i] += cur
+//		if rune(boxes[i]) == '1' {
+//			r++
+//		}
+//		cur += r
+//	}
+//	return res
 //}
-
 //func main() {
-//	items := [][]int{{1, 2}, {3, 2}, {2, 4}, {5, 6}, {3, 5}}
-//	queries := []int{1, 2, 3, 4, 5, 6}
-//	vam := leetcode.MaximumBeauty(items, queries)
-//	fmt.Println(vam)
-//
+//	f, _ := os.Create("cpu.prof")
+//	pprof.StartCPUProfile(f)
+//	defer pprof.StopCPUProfile()
+//	boxes := "11101000000111111100001100011110101111010111000110000100000100100010111000101100101110110010011110010000110101000111001101000111111110110010111001000100010100111101100010110111111010011001000000011110110101011011100000110110001110011100111000011010001110111010100101011101010010110110110000100101111101001111110000001100011010111001101001000100110110011011101110101100001101011011110100001000111011100010101110101101001100000001111011000100000101010011001111000100000011111100110100111010001101111100001001010011011001110110101111001101010100111111110010100100110101110010110000101000010111001100111000110001001101110011110101001010000101100110011101101000111010100100110011111010000000000110011100001110010100000101011111100101111001011110101110010101000000101111000000101000100000101101110100010111000101101100111010011100000011100001100011110010000001110000111001000000111100001100000001000110101011100111011110100011111110011101001000110111110001111100111011111011011001010101110111111001111011100100010110001000011001111101010101001101111010101000011110001011001111111110011001000101111000110111100100010111000110100001001111011101001000000001111011001100001001011000000010001001010110111001000101100111011111100001100100111110010111100110110101101100110110111011110111110110010001100100100100010111000010101100001101001000001110010111101100001011001101001111010011100100101101100100011000100010001110101110000010000011001011111010101110101000010001111100111001111111001110001111110111011100000001100001101110101110010110101100010001100011110100111011101110010111001110100101100100011000011010011101101100"
+//	//[11, 8 ]
+//	fmt.Println(minOperations(boxes))
 //}
-
-//runtime.GOMAXPROCS(runtime.NumCPU())
-//fmt.Println(runtime.NumCPU())
-//wg := new(sync.WaitGroup)
-//cnt := 0
-//
-//for i := 0; i < workersCnt; i++ {
-//	wg.Add(1)
-//
-//	go func() {
-//		defer wg.Done()
-//		cnt++
-//	}()
-//}
-//wg.Wait()
-////wg.Done()
-//fmt.Print(cnt)
 
 package main
 
 import (
 	"fmt"
-	"github.com/Seven11Eleven/go-pod-kapot/grep"
 )
 
-const workersCnt = 1000000
-
-//func main() {
-//	id := "5f2a6c69e1d7a4e0077b4e6b"
-//	validId := vgo.(id)
-//	fmt.Println(validId) // true
-//}
-
 func main() {
-	pat := "hello"
-	flag := make([]string, 0)
-	flagik := "-i"
-	flagik2 := "-n"
-	flagik3 := "-x"
-	flag = append(flag, flagik)
-	flag = append(flag, flagik2)
-	flag = append(flag, flagik3)
-	filepath := "grep/meme.txt"
-	filepath1 := "grep/meme2.txt"
-	filepathes := make([]string, 0)
-	filepathes = append(filepathes, filepath)
-	filepathes = append(filepathes, filepath1)
-
-	stroka := grep.Search(pat, flag, filepathes)
-	fmt.Println(stroka)
+	var ogromnoyeNazvanieStroki string
+	ogromnoyeNazvanieStroki = "abhaziyabezobraziya"
+	//syscall.Write(1, []byte(ogromnoyeNazvanieStroki))
+	fmt.Print(ogromnoyeNazvanieStroki)
 }

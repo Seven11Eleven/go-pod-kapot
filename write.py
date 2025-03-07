@@ -1,0 +1,2 @@
+ogromnoyeNazvanieStroki = "abhaziyabezobraziya"
+print(ogromnoyeNazvanieStroki)
